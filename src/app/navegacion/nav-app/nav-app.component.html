@@ -1,28 +1,36 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Bienvenidos: Ferreteria</a>
+        <a class="navbar-brand" href="#">Bienvenidos: Ferretería Martínez</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" [routerLink]="['registrar']" [routerLinkActive]="['bg-secondary', 'text-white','text-centerd']">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Productos</a>
+                    <a class="nav-link" [routerLink]="['productos']" [routerLinkActive]="['bg-secondary', 'text-white','text-centerd']">Venta</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Ventas</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         Producto
+        </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" [routerLink]="['productos']" [routerLinkActive]="['bg-secondary', 'text-white','text-centerd']">mostrar</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['agregarProducto']" [routerLinkActive]="['bg-secondary', 'text-white','text-centerd']">agregar</a></li>
+                    </ul>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            Empleado
           </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" [routerLink]>agregar</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['productos']" [routerLinkActive]="['bg-secondary', 'text-white','text-centerd']">agregar</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['productos']" [routerLinkActive]="['bg-secondary', 'text-white','text-centerd']">Another action</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['productos']" [routerLinkActive]="['bg-secondary', 'text-white','text-centerd']">Something else here</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -30,7 +38,7 @@
          Reportes
         </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" [routerLink]="['registrar']" [routerLinkActive]="['bg-secondary', 'text-white','text-center']">agregar</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['registrar']" [routerLinkActive]="['bg-secondary', 'text-white','text-centerd']">agregar</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>

@@ -11,7 +11,8 @@ export class LoginAppComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void{}
+
+
 
 }
