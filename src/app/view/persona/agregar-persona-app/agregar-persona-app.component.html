@@ -1,0 +1,134 @@
+<div class="col-6 offset-3">
+    <div class="card">
+        <div class="card-header text-center bg-muted">
+            <p class='fw-bold fs-3 text-dark'>Datos personales</p>
+        </div>
+        <div class="card-body"></div>
+
+        <form novalidate>
+            <legend class="d-flex fw-bold fs-2 justify-content-center">Formulario</legend>
+
+            <fieldset>
+
+                <div class="row text-center">
+
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+
+                            <div class="d-flex justify-content-between">
+                                <label for="nombrePersona" class="form-label fw-bold fs-6">Nombre</label>
+                                <label for="nombrePersona" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+
+                            <input type="text" required class="form-control" name="NombrePersona" id="nombrePersona" placeholder="Ingrese su nombre" (ngModel)="persona.NombrePersona" required />
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="paternoPersona" class="form-label fw-bold fs-6">Apellido paterno</label>
+                                <label for="paternoPersona" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+
+                            <input type="text" class="form-control" name="PaternoPersona" id="paternoPersona" placeholder="Ingrese su apellido paterno" (ngModel)="persona.PaternoPersona" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row text-center">
+
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="maternoPersona" class="form-label fw-bold fs-6">Apellido materno</label>
+                                <label for="paternoPersona" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+                            <input type="text" class="form-control" name="MaternoPersona" id="maternoPersona" placeholder="Ingrese su apellido materno" (ngModel)="persona.MaternoPersona" />
+
+                        </div>
+                    </div>
+
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="Telefono" class="form-label fw-bold fs-6">Teléfono</label>
+                            </div>
+
+                            <input type="text" class="form-control" max="10" name="Telefono" id="Telefono" placeholder="Ingrese su teléfono" (ngModel)="persona.Telefono" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row text-center">
+
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="Curp" class="form-label fw-bold fs-6">Curp</label>
+                                <label for="Curp" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+
+                            <input type="text" class="form-control" name="Curp" id="Curp" placeholder="Ingrese su Curp" (ngModel)="persona.nombre" />
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="Correo" class="form-label fw-bold fs-6">Correo</label>
+                                <label for="Correo" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+
+                            <input type="email" class="form-control" name="Correo" id="Correo" placeholder="Ingrese su correo" (ngModel)="persona.nombre" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row text-center">
+
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group ">
+                            <div class="d-flex justify-content-between">
+                                <label for="Genero" class="form-label fw-bold fs-6">Género</label>
+                                <label for="Genero" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+                            <select name="genero" id="genero" class="form-control me-5" [(ngModel)]='selectdGenero' (ngModel)="persona.genero">
+                              <option>Seleccione su género</option>
+                              <option>Hombre</option>
+                              <option>Mujer</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="Fecha" class="form-label fw-bold fs-6">Fecha de Nacimiento</label>
+                                <label for="Fecha" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+                            <input type="date" class="form-control me-5" name="Fecha" id="Fecha" placeholder="Fecha de Nacimiento" (ngModel)="persona.Fecha" />
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-4 offset-7 p-3 d-flex justify-content-between">
+
+                        <button class="btn btn-secondary col-12 fw-bold fs-5" type="submit">Agregar</button>
+
+                    </div>
+
+                </div>
+
+            </fieldset>
+
+
+
+        </form>
+
+
+    </div>
+</div>

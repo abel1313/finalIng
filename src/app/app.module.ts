@@ -22,6 +22,12 @@ import { ConsultarProductoComponent } from './view/productos/consultar-producto/
 import { RegistrarEmpleadoComponent } from './view/empleados/registrar-empleado/registrar-empleado.component';
 import { MostrarEmpleadoComponent } from './view/empleados/mostrar-empleado/mostrar-empleado.component';
 import { ActualizarEmpleadoComponent } from './view/empleados/actualizar-empleado/actualizar-empleado.component';
+import { AgregarPersonaAppComponent } from './view/persona/agregar-persona-app/agregar-persona-app.component';
+import { EditarPersonaAppComponent } from './view/persona/editar-persona-app/editar-persona-app.component';
+import { MostrarPersonaAppComponent } from './view/persona/mostrar-persona-app/mostrar-persona-app.component';
+import { AgregarDireccionAppComponent } from './view/direcciones/agregar-direccion-app/agregar-direccion-app.component';
+import { EditarDireccionAppComponent } from './view/direcciones/editar-direccion-app/editar-direccion-app.component';
+import { MostrarDireccionesAppComponent } from './view/direcciones/mostrar-direcciones-app/mostrar-direcciones-app.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +42,13 @@ import { ActualizarEmpleadoComponent } from './view/empleados/actualizar-emplead
     ConsultarProductoComponent,
     RegistrarEmpleadoComponent,
     MostrarEmpleadoComponent,
-    ActualizarEmpleadoComponent
+    ActualizarEmpleadoComponent,
+    AgregarPersonaAppComponent,
+    EditarPersonaAppComponent,
+    MostrarPersonaAppComponent,
+    AgregarDireccionAppComponent,
+    EditarDireccionAppComponent,
+    MostrarDireccionesAppComponent
   ],
   imports: [
     BrowserModule,

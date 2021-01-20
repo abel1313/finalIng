@@ -1,0 +1,145 @@
+<div class="col-6 offset-3">
+    <div class="card">
+        <div class="card-header text-center bg-muted">
+            <p class='fw-bold fs-3 text-dark'>Datos de la dirección</p>
+        </div>
+        <div class="card-body"></div>
+
+        <form class='validarDireccion' novalidate>
+            <legend class="d-flex fw-bold fs-2 justify-content-center">Formulario</legend>
+
+            <fieldset>
+
+                <div class="row text-center">
+
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+
+                            <div class="d-flex justify-content-between">
+                                <label for="Pais" class="form-label fw-bold fs-6">País</label>
+                                <label for="Pais" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+
+                            <input type="text" required class="form-control" name="Pais" id="Pais" placeholder="Ingrese su país" (ngModel)="direccion.pais" required />
+
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="Estado" class="form-label fw-bold fs-6">Estado</label>
+                                <label for="Estado" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+
+                            <input type="text" class="form-control" name="Estado" id="Estado" placeholder="Ingrese su estado" (ngModel)="direccion.estado" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row text-center">
+
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="Municipio" class="form-label fw-bold fs-6">Municipio</label>
+                                <label for="Municipio" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+                            <input type="text" class="form-control" name="Municipio" id="Municipio" placeholder="Ingrese su municipio" (ngModel)="direccion.MUnicipio" />
+
+                        </div>
+                    </div>
+
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="Calle" class="form-label fw-bold fs-6">Calle</label>
+                                <label for="Calle" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+
+                            <input type="text" class="form-control" name="Calle" id="Calle" placeholder="Ingrese su calle" (ngModel)="direccion.Telefono" />
+                            <div class="invalid-feedback ">
+                                Ingrese su calle
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row text-center">
+
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="Colonia" class="form-label fw-bold fs-6">Colonia</label>
+                                <label for="Colonia" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+
+                            <input type="text" class="form-control" name="Colonia" id="Colonia" placeholder="Ingrese su colonia" (ngModel)="direccion.Colonia" />
+                            <div class="invalid-feedback ">
+                                Ingrese su colonia
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="Codigo" class="form-label fw-bold fs-6">Código postal</label>
+                                <label for="Codigo" class="form-label fw-bold fs-6 text-danger">*</label>
+                            </div>
+
+                            <input type="email" class="form-control" name="Codigo" id="Codigo" placeholder="Ingrese su código postal" (ngModel)="direccion.nombre" />
+                            <div class="invalid-feedback ">
+                                Ingrese su código postal
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row text-center">
+
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="Numero" class="form-label fw-bold fs-6">Número interior</label>
+                            </div>
+                            <input type="text" class="form-control" name="Numero" id="Numero" placeholder="Número interior" (ngModel)="direccion.Interior" />
+                            <div class="invalid-feedback ">
+                                Ingrese su número interior
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 d-flex justify-content-center p-2">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="Exterior" class="form-label fw-bold fs-6">Número exterior</label>
+                            </div>
+                            <input type="text" class="form-control" name="Exterior" id="Exterior" placeholder="Número exterior" (ngModel)="direccion.Exterior" />
+                            <div class="invalid-feedback ">
+                                Ingrese su número exterior
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-4 offset-7 p-3 d-flex justify-content-between">
+
+                        <button type="submit" class="btn btn-secondary col-12 fw-bold fs-5">Agregar</button>
+
+                    </div>
+
+                </div>
+
+            </fieldset>
+
+
+
+        </form>
+
+
+    </div>
+</div>
