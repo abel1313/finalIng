@@ -1,3 +1,4 @@
+import { AgregarPermisoAppComponent } from './view/permisos/agregar-permiso-app/agregar-permiso-app.component';
 import { AgregarPersonaAppComponent } from './view/persona/agregar-persona-app/agregar-persona-app.component';
 import { RegistrarProductoComponent } from './view/productos/registrar-producto/registrar-producto.component';
 import { MostrarProductoComponent } from './view/productos/mostrar-producto/mostrar-producto.component';
@@ -9,13 +10,14 @@ import { AgregarDireccionAppComponent } from './view/direcciones/agregar-direcci
 
 const routes: Routes =
 [
-  { path: '', redirectTo: 'direccion', pathMatch: 'full' },
+  { path: '', redirectTo: 'permiso', pathMatch: 'full' },
   { path: 'login', component: LoginAppComponent },
   { path: 'registrar', component: RegistrarUsuarioComponent },
   { path: 'productos', component: MostrarProductoComponent },
   { path: 'agregarProducto', component: RegistrarProductoComponent },
   { path: 'persona', component: AgregarPersonaAppComponent },
-  { path: 'direccion', component: AgregarDireccionAppComponent }
+  { path: 'direccion', component: AgregarDireccionAppComponent },
+  { path: 'permiso', component: AgregarPermisoAppComponent }
 
 
 

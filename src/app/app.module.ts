@@ -28,6 +28,9 @@ import { MostrarPersonaAppComponent } from './view/persona/mostrar-persona-app/m
 import { AgregarDireccionAppComponent } from './view/direcciones/agregar-direccion-app/agregar-direccion-app.component';
 import { EditarDireccionAppComponent } from './view/direcciones/editar-direccion-app/editar-direccion-app.component';
 import { MostrarDireccionesAppComponent } from './view/direcciones/mostrar-direcciones-app/mostrar-direcciones-app.component';
+import { AgregarPermisoAppComponent } from './view/permisos/agregar-permiso-app/agregar-permiso-app.component';
+import { EditarPermisoAppComponent } from './view/permisos/editar-permiso-app/editar-permiso-app.component';
+import { MostrarPermisosAppComponent } from './view/permisos/mostrar-permisos-app/mostrar-permisos-app.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { MostrarDireccionesAppComponent } from './view/direcciones/mostrar-direc
     MostrarPersonaAppComponent,
     AgregarDireccionAppComponent,
     EditarDireccionAppComponent,
-    MostrarDireccionesAppComponent
+    MostrarDireccionesAppComponent,
+    AgregarPermisoAppComponent,
+    EditarPermisoAppComponent,
+    MostrarPermisosAppComponent
   ],
   imports: [
     BrowserModule,

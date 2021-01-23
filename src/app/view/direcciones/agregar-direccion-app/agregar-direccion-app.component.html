@@ -31,7 +31,7 @@
                                 <label for="Estado" class="form-label fw-bold fs-6 text-danger">*</label>
                             </div>
 
-                            <input type="text" class="form-control" name="Estado" id="Estado" placeholder="Ingrese su estado" (ngModel)="direccion.estado" />
+                            <input type="text" class="form-control" name="Estado" id="Estado" placeholder="Ingrese su estado" (ngModel)="direccion.estado" required />
                         </div>
                     </div>
 
@@ -56,7 +56,7 @@
                                 <label for="Calle" class="form-label fw-bold fs-6 text-danger">*</label>
                             </div>
 
-                            <input type="text" class="form-control" name="Calle" id="Calle" placeholder="Ingrese su calle" (ngModel)="direccion.Telefono" />
+                            <input type="text" class="form-control" name="Calle" id="Calle" placeholder="Ingrese su calle" (ngModel)="direccion.Telefono" required />
                             <div class="invalid-feedback ">
                                 Ingrese su calle
                             </div>
@@ -128,7 +128,7 @@
 
                     <div class="col-4 offset-7 p-3 d-flex justify-content-between">
 
-                        <button type="submit" class="btn btn-secondary col-12 fw-bold fs-5">Agregar</button>
+                        <button class="btn btn-secondary col-12 fw-bold fs-5">Agregar</button>
 
                     </div>
 

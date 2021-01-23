@@ -5,27 +5,73 @@
         </div>
         <div class="card-body">
             <form action="">
-                <legend class="text-center">Datos del producto</legend>
+                <legend class="text-center fw-bolder fs-5">Datos del producto</legend>
 
-                <fieldset>
-                    <div class="row">
+                <fieldset class='border' style="background-color:  #e0d8d6  ">
+
+                    <div class="row p-2">
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                                <input type="text" class="form-control" id="NomPorudcto" placeholder="" name="NomPorudcto">
+                                <label for="NomPorudcto">Nombre del producto</label>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                                <input type="text" class="form-control" id="CodBarra" placeholder="" name="CodBarra">
+                                <label for="CodBarra">Código de barra</label>
                             </div>
                         </div>
                     </div>
 
+                    <div class="row p-2">
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="" id="DescProducto" name="DescProducto" style="height: 100px"></textarea>
+                                <label for="DescProducto">Descripción</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="" id="CaracProducto" name="CaracProducto" style="height: 100px"></textarea>
+                                <label for="CaracProducto">Caracteristicas</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col-6">
+                            <div class="form-floating mb-3">
+                                <input type="number" min="0" class="form-control" id="ExistProducto" name="ExistProducto" placeholder="">
+                                <label for="ExistProducto">Existencia</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="MarcaProducto" name="MarcaProducto" placeholder="">
+                                <label for="MarcaProducto">Marca del producto</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col-6">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" name="ProveedorProducto" placeholder="">
+                                <label for="ProveedorProducto">Nombre del proveedor</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
                     <div class="row">
-                        <div class="col-12 d-flex justify-content-center">
-                            <button class='btn btn-primary col-6'>Agregar</button>
+                        <div class="col-6">
+                            <div class="d-flex justify-content-center p-3">
+                                <button class='btn btn-primary col-8'>Agregar</button>
+                            </div>
                         </div>
                     </div>
 
