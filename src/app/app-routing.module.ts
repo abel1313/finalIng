@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginAppComponent } from './login/login-app/login-app.component';
 import { AgregarDireccionAppComponent } from './view/direcciones/agregar-direccion-app/agregar-direccion-app.component';
+import { ConsultarProductoComponent } from './view/productos/consultar-producto/consultar-producto.component';
 
 const routes: Routes =
 [
@@ -14,6 +15,7 @@ const routes: Routes =
   { path: 'login', component: LoginAppComponent },
   { path: 'registrar', component: RegistrarUsuarioComponent },
   { path: 'productos', component: MostrarProductoComponent },
+  { path: 'consultarProductos', component: ConsultarProductoComponent },
   { path: 'agregarProducto', component: RegistrarProductoComponent },
   { path: 'persona', component: AgregarPersonaAppComponent },
   { path: 'direccion', component: AgregarDireccionAppComponent },

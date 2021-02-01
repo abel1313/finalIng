@@ -1,4 +1,4 @@
-import { Usuario } from './../model/Usuario';
+import { Usuario } from './../model/Usuarios/Usuario';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -16,6 +16,7 @@ export class ServiceAppService {
 // Uri para comunicarse con el servidor en JAVA
 
 private URI_JAVA = 'http://localhost:3000/ferreteria';
+private URI_JAVA_Productos = 'http://localhost:8080/productos';
 
 // 2do Iniciar el contructor con las solicitudes del cliente
   constructor(private http: HttpClient) { }
@@ -40,6 +41,15 @@ private URI_JAVA = 'http://localhost:3000/ferreteria';
   editarUsuario(id: number, updateUsuario: Usuario): Observable<Usuario>
   {
     return this.http.put(`${this.URI_JAVA}/usuario/login/${id}`, updateUsuario);
+  }
+  getProductoAll()
+  {
+    return this.http.get(`${this.URI_JAVA_Productos}/all`)
+  }
+  getOneProduct(nombreProducto:string)
+  {
+    //console.log(`${this.URI_JAVA_Productos}/all/${nombreProducto}`);
+    return this.http.get(`${this.URI_JAVA_Productos}/one/${nombreProducto}`);
   }
 
 

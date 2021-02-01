@@ -5,18 +5,20 @@
 
     <div class="col-4 pt-2">
         <div class="form-group">
-            <input type="text" class="form-control" name="name" placeholder="Ingrese datos">
+            <input type="text" (keyup)="onKey($event)" (ngModel)="valueCaja.nameCaja"  class="form-control" name="nameCaja" placeholder="Ingrese datos">
+            key up count: {{values}}
         </div>
     </div>
 
-    <div class="col-5 pt-2">
+    <div class="col-3 pt-2">
         <button class="btn btn-primary col-8">Buscar</button>
     </div>
+
 
 
 </div>
 
 
-<div class="container-fluid">
-    <app-consultar-producto></app-consultar-producto>
+<div class="container-fluid" id='componentConsulta' *ngFor="let c of prod" >
+    <app-consultar-producto [hero]="c"></app-consultar-producto>
 </div>
