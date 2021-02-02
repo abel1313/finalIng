@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { ServiceAppService } from 'src/app/service/service-app.service';
 
 @Component({
   selector: 'app-login-app',
@@ -9,7 +10,15 @@ export class LoginAppComponent implements OnInit {
 
   @HostBinding('class') classLogin = 'row';
 
-  constructor() { }
+  usuario : any = 
+  {
+   
+    nombreUsuario : '',
+    contraUsuario : ''
+    
+  }
+
+  constructor(private service: ServiceAppService) { }
 
   ngOnInit(): void
   {
@@ -29,6 +38,20 @@ export class LoginAppComponent implements OnInit {
         form.classList.add('was-validated');
       }, false);
     });
+}
+
+
+btnAccederSistema()
+{
+  this.service.getOneUsuario(this.usuario)
+  .subscribe(
+    res =>
+    {
+      console.log(res);
+    },
+    error=> console.log(error)
+  );
+    console.log(this.usuario);
 }
 
   }

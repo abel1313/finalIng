@@ -18,6 +18,8 @@ export class ServiceAppService {
 private URI_JAVA = 'http://localhost:3000/ferreteria';
 private URI_JAVA_Productos = 'http://localhost:8080/productos';
 
+private URI_JAVA_USUARIOS = 'http://localhost:8080/ferreteria/usuarios';
+
 // 2do Iniciar el contructor con las solicitudes del cliente
   constructor(private http: HttpClient) { }
 
@@ -53,4 +55,13 @@ private URI_JAVA_Productos = 'http://localhost:8080/productos';
   }
 
 
+
+  // ----------------------- Usuarios ------------------------------ //
+  getOneUsuario(usr: object)
+  {
+ // console.log(usr);
+    //console.log(`${this.URI_JAVA_Productos}/all/${nombreProducto}`);
+    return this.http.post(`${this.URI_JAVA_USUARIOS}`, usr);
+  }
+ 
 }
