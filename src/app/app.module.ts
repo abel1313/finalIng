@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceAppService } from './service/service-app.service';
 // 7tmo agregar el modulo de forms para la interpolacion y agregar en imports
 import { FormsModule  } from '@angular/forms';
-
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,6 +59,8 @@ import { MostrarPermisosAppComponent } from './view/permisos/mostrar-permisos-ap
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // Permite subir imagenes
+    AngularFileUploaderModule,
     // 4to Agregar HttpClientModule para que el service funcione
     HttpClientModule,
     // 7.2 agregar a imports para el forms

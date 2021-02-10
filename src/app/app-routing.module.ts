@@ -11,7 +11,6 @@ import { ConsultarProductoComponent } from './view/productos/consultar-producto/
 
 const routes: Routes =
 [
-  { path: '', redirectTo: 'permiso', pathMatch: 'full' },
   { path: 'login', component: LoginAppComponent },
   { path: 'registrar', component: RegistrarUsuarioComponent },
   { path: 'productos', component: MostrarProductoComponent },
@@ -19,8 +18,8 @@ const routes: Routes =
   { path: 'agregarProducto', component: RegistrarProductoComponent },
   { path: 'persona', component: AgregarPersonaAppComponent },
   { path: 'direccion', component: AgregarDireccionAppComponent },
-  { path: 'permiso', component: AgregarPermisoAppComponent }
-
+  { path: 'permiso', component: AgregarPermisoAppComponent },
+  { path: '**', redirectTo: 'productos', pathMatch: 'full' }
 
 
 ];

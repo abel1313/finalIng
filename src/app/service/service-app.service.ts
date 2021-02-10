@@ -1,9 +1,11 @@
 import { Usuario } from './../model/Usuarios/Usuario';
 import { Observable } from 'rxjs';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 // 1ro importar el modulo de http para las solicitudes del cliente
 import { HttpClient } from '@angular/common/http';
+import { ServiceProducto } from './ServiceProducto/ServiceProducto';
+import { ServiceVenta } from './ServiceProducto/ServiceVenta';
 
 
 
@@ -13,10 +15,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ServiceAppService {
 
+  producto$ = new EventEmitter();
+
+
+
 // Uri para comunicarse con el servidor en JAVA
 
 private URI_JAVA = 'http://localhost:3000/ferreteria';
-private URI_JAVA_Productos = 'http://localhost:8080/productos';
+ private URI_JAVA_Productos = 'http://localhost:8080/productos';
 
 private URI_JAVA_USUARIOS = 'http://localhost:8080/ferreteria/usuarios';
 
@@ -24,9 +30,17 @@ private URI_JAVA_USUARIOS = 'http://localhost:8080/ferreteria/usuarios';
   constructor(private http: HttpClient) { }
 
   // 3ero Métodos del cliente
+
+  // ------------------------------ Usuarios ------------------------------------------ //
   obtenerUsuario(idUsurio: number): Observable<Usuario>
   {
     return this.http.get(`${this.URI_JAVA}/usuario/login/${idUsurio}`);
+  }
+  getOneUsuario(usr: object)
+  {
+ // console.log(usr);
+    //console.log(`${this.URI_JAVA_Productos}/all/${nombreProducto}`);
+    return this.http.post(`${this.URI_JAVA_USUARIOS}`, usr);
   }
   obtenerUsuarios(): any
   {
@@ -44,24 +58,17 @@ private URI_JAVA_USUARIOS = 'http://localhost:8080/ferreteria/usuarios';
   {
     return this.http.put(`${this.URI_JAVA}/usuario/login/${id}`, updateUsuario);
   }
-  getProductoAll()
-  {
-    return this.http.get(`${this.URI_JAVA_Productos}/all`)
-  }
-  getOneProduct(nombreProducto:string)
-  {
-    //console.log(`${this.URI_JAVA_Productos}/all/${nombreProducto}`);
-    return this.http.get(`${this.URI_JAVA_Productos}/one/${nombreProducto}`);
-  }
+// ------------------------------ Usuarios ------------------------------------------ //
+
+ generarDetalle(idProducto: number) { 
+  return this.http.post(`${this.URI_JAVA_Productos}/generarDetalle/${idProducto}`, 2);
+} 
+
+
+serviceProd = new ServiceProducto(this.http);
+
+serviceVenta = new ServiceVenta(this.http);
 
 
 
-  // ----------------------- Usuarios ------------------------------ //
-  getOneUsuario(usr: object)
-  {
- // console.log(usr);
-    //console.log(`${this.URI_JAVA_Productos}/all/${nombreProducto}`);
-    return this.http.post(`${this.URI_JAVA_USUARIOS}`, usr);
-  }
- 
 }

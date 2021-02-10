@@ -12,13 +12,13 @@
                     <div class="row p-2">
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="NomPorudcto" placeholder="" name="NomPorudcto">
+                                <input type="text" class="form-control" id="NomPorudcto" placeholder="" name="nombre_Producto" [(ngModel)]="producto.nombreProducto">
                                 <label for="NomPorudcto">Nombre del producto</label>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="CodBarra" placeholder="" name="CodBarra">
+                                <input type="text" class="form-control" id="CodBarra" placeholder="" name="codigo_Barras_Producto" [(ngModel)]='producto.codigoBarrasProducto'>
                                 <label for="CodBarra">Código de barra</label>
                             </div>
                         </div>
@@ -27,13 +27,13 @@
                     <div class="row p-2">
                         <div class="col-6">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="" id="DescProducto" name="DescProducto" style="height: 100px"></textarea>
+                                <textarea class="form-control" placeholder="" id="DescProducto" name="descripcion_Producto" style="height: 100px" [(ngModel)]='producto.descripcionProducto'></textarea>
                                 <label for="DescProducto">Descripción</label>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="" id="CaracProducto" name="CaracProducto" style="height: 100px"></textarea>
+                                <textarea class="form-control" placeholder="" id="CaracProducto" name="caracteristicas_Producto" style="height: 100px" [(ngModel)]='producto.caracteristicasProducto'></textarea>
                                 <label for="CaracProducto">Caracteristicas</label>
                             </div>
                         </div>
@@ -44,14 +44,14 @@
                     <div class="row p-2">
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="number" min="0" class="form-control" id="ExistProducto" name="ExistProducto" placeholder="">
+                                <input type="number" min="0" class="form-control" id="ExistProducto" name="existencia_Producto" placeholder="" [(ngModel)]='producto.existenciaProducto'>
                                 <label for="ExistProducto">Existencia</label>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="MarcaProducto" name="MarcaProducto" placeholder="">
-                                <label for="MarcaProducto">Marca del producto</label>
+                                <input type="number" class="form-control" id="precio_Producto" name="precio_Producto" placeholder="" [(ngModel)]='producto.precioProducto'>
+                                <label for="precio_Producto">Marca del producto</label>
                             </div>
                         </div>
                     </div>
@@ -59,8 +59,22 @@
                     <div class="row p-2">
                         <div class="col-6">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" name="ProveedorProducto" placeholder="">
+                                <input type="email" class="form-control" id="floatingInput" name="id_ProveedorFK" placeholder="" [(ngModel)]='producto.idProveedorFK'>
                                 <label for="ProveedorProducto">Nombre del proveedor</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Example file input</label>
+                                <input type="file" (change)="onChange($event)" class="form-control-file" id="exampleFormControlFile1" accept=".jpg, .png" multiple="false">
+                                <p class="card-text">
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="visualizar">
+                            <div class="col-12">
+                                <img [src]="visualizar" alt="..." class="img-thumbnail col-5 offset-7">
                             </div>
                         </div>
 
@@ -70,10 +84,26 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="d-flex justify-content-center p-3">
-                                <button class='btn btn-primary col-8'>Agregar</button>
+                                <button class='btn btn-primary col-8' [disabled]="loading" (click)="onUpload()">
+                                    {{ (loading)? 'cargando.....': 'Subir archivo' }}
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex justify-content-center p-3">
+                                <button class='btn btn-primary col-8' (click)="cancelUpload()">cancelar</button>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <!--Flag variable is used here-->
+                            <div class="card-text" *ngIf="loading">
+                                <h3>Loading ...</h3>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </fieldset>
             </form>
