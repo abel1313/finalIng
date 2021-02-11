@@ -6,6 +6,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ServiceProducto } from './ServiceProducto/ServiceProducto';
 import { ServiceVenta } from './ServiceProducto/ServiceVenta';
+import { ServiceProveedor } from './ServiceProveedor/ServiceProveedor';
 
 
 
@@ -21,7 +22,7 @@ export class ServiceAppService {
 
 // Uri para comunicarse con el servidor en JAVA
 
-private URI_JAVA = 'http://localhost:3000/ferreteria';
+public URI_JAVA = 'http://localhost:3000/ferreteria';
  private URI_JAVA_Productos = 'http://localhost:8080/productos';
 
 private URI_JAVA_USUARIOS = 'http://localhost:8080/ferreteria/usuarios';
@@ -68,6 +69,8 @@ private URI_JAVA_USUARIOS = 'http://localhost:8080/ferreteria/usuarios';
 serviceProd = new ServiceProducto(this.http);
 
 serviceVenta = new ServiceVenta(this.http);
+
+serviceProveedor = new ServiceProveedor(this.http);
 
 
 

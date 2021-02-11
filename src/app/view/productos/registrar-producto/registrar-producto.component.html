@@ -57,12 +57,23 @@
                     </div>
 
                     <div class="row p-2">
-                        <div class="col-6">
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Number</mat-label>
+                            <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+
+                        <!-- <div class="col-6">
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" id="floatingInput" name="id_ProveedorFK" placeholder="" [(ngModel)]='producto.idProveedorFK'>
                                 <label for="ProveedorProducto">Nombre del proveedor</label>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Example file input</label>

@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // 3er paso Agregar/Importar HttpClientMode habilitar el service y agregarlo a imports
 import { HttpClientModule } from '@angular/common/http';
 // 5to Agregar/Importar la clase servicio para que los service funcione
 import { ServiceAppService } from './service/service-app.service';
 // 7tmo agregar el modulo de forms para la interpolacion y agregar en imports
-import { FormsModule  } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { AngularFileUploaderModule } from "angular-file-uploader";
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,11 @@ import { MostrarDireccionesAppComponent } from './view/direcciones/mostrar-direc
 import { AgregarPermisoAppComponent } from './view/permisos/agregar-permiso-app/agregar-permiso-app.component';
 import { EditarPermisoAppComponent } from './view/permisos/editar-permiso-app/editar-permiso-app.component';
 import { MostrarPermisosAppComponent } from './view/permisos/mostrar-permisos-app/mostrar-permisos-app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatAutocompleteModule  } from "@angular/material/autocomplete";
+import { MatFormFieldModule  } from "@angular/material/form-field";
+import { MatInput  } from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -59,15 +65,27 @@ import { MostrarPermisosAppComponent } from './view/permisos/mostrar-permisos-ap
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatAutocompleteModule,
     // Permite subir imagenes
     AngularFileUploaderModule,
     // 4to Agregar HttpClientModule para que el service funcione
     HttpClientModule,
     // 7.2 agregar a imports para el forms
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    
+    ReactiveFormsModule,
+    
+    MatFormFieldModule,
+    MatInput
+
   ],
+ 
   // 6to agregarlo a Prociders para que funcione el service
   providers: [ServiceAppService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+  ],
 })
 export class AppModule { }

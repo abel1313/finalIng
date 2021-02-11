@@ -1,9 +1,18 @@
 import { Component, HostBinding, OnInit, NgModule } from '@angular/core';
+
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith, debounceTime} from 'rxjs/operators';
+
+
+
 import { DomSanitizer } from '@angular/platform-browser';
 import { ngfModule, ngf } from "angular-file";
 import { FileUploader } from 'ng2-file-upload';
 import { Productos } from 'src/app/model/Productos/Producto';
 import { ServiceAppService } from 'src/app/service/service-app.service';
+import * as $ from 'jquery';
+import { IProveedor } from "../../../model/Proveedores/IProveedor";
 
 @Component({
   selector: 'app-registrar-producto',
@@ -21,6 +30,11 @@ shortLink: string = "";
 loading: boolean = false; // Flag variable 
 file: File = null; // Variable to store file 
 
+myControl = new FormControl();
+options: string[] = ['One', 'Two', 'Three'];
+filteredOptions: Observable<string[]>;
+
+
   constructor(private sanitizer: DomSanitizer, private serviceProducto: ServiceAppService) {}
 
   producto: Productos = 
@@ -36,7 +50,20 @@ file: File = null; // Variable to store file
     nombreImagen: '',
   }
 
-  ngOnInit(): void {
+  proveedor: any = []
+
+
+  ngOnInit(): void 
+  {
+    this.mostrarProveedores();
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
+  }
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
   
 public onUpload() { 
@@ -143,5 +170,23 @@ extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
   }
   */
 
+  //método que permite obtener todos los provedores que el servidor regrese
+ // sevice para hacer una petición al servidor
+  mostrarProveedores()
+  {
+    this.serviceProducto.serviceProveedor.obtenerProveedores()
+    .subscribe
+    ( 
+      res=> 
+      {
+        console.log(res);
+        this.proveedor = res;
+      }
+      ,error => 
+      console.log(error));
+
+  }
+
 
 }
+
